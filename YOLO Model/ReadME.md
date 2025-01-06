@@ -132,9 +132,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [YOLO](https://github.com/ultralytics/ultralytics) by Ultralytics for the object detection model.
 - [OpenCV](https://opencv.org/) for video processing and heatmap generation.
 - [Tkinter](https://docs.python.org/3/library/tkinter.html) for the GUI interface.
-```
 
----
 
 ### How to Use This:
 1. Copy the entire block of text above.
