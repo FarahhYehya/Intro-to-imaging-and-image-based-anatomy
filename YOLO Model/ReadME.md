@@ -1,4 +1,3 @@
-```markdown
 # 🎥 YOLO Video Detection with Player-Specific Heatmap
 
 This project is a Python application that uses the YOLO (You Only Look Once) object detection model to detect players in a video, track their movements, and generate player-specific heatmaps. Built with `tkinter` for the GUI, `OpenCV` for video processing, and `ultralytics` for YOLO model integration, this tool is perfect for analyzing sports videos (e.g., football/soccer) and visualizing player movements on a heatmap overlaid on a football pitch.
