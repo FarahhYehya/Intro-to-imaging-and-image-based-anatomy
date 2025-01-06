@@ -1,53 +1,3 @@
-You should write this in a file called **`README.md`** in your GitHub repository. The `README.md` file is the first thing people see when they visit your repository, and it’s where you explain what your project does, how to set it up, and how to use it.
-
-Here’s how you can do it step by step:
-
----
-
-### Step 1: Go to Your GitHub Repository
-1. Open your web browser and go to your GitHub repository.
-2. If you haven’t created a repository yet, click the **"New"** button on the GitHub homepage to create one.
-
----
-
-### Step 2: Create the `README.md` File
-1. Inside your repository, click the **"Add file"** button (it’s near the top right of the page).
-2. Select **"Create new file"** from the dropdown menu.
-
----
-
-### Step 3: Name the File
-1. In the file name field, type **`README.md`**.
-   - The `.md` extension stands for **Markdown**, which is the language GitHub uses for formatting text.
-
----
-
-### Step 4: Paste the Content
-1. Copy the **entire block of text** I provided earlier.
-2. Paste it into the text editor on GitHub (where it says "Edit new file").
-
----
-
-### Step 5: Save the File
-1. Scroll down to the bottom of the page.
-2. In the **"Commit new file"** section, write a short description like **"Added README.md file"**.
-3. Click the green **"Commit new file"** button.
-
----
-
-### Step 6: Verify the `README.md` File
-1. After saving, you’ll see the `README.md` file in your repository.
-2. GitHub will automatically render the Markdown content, so it will look nice and formatted.
-
----
-
-### What Happens Next?
-- When someone visits your repository, they’ll see the `README.md` file displayed right below the list of files.
-- This is where they’ll read about your project, how to set it up, and how to use it.
-
----
-
-### Example of What Your `README.md` Will Look Like:
 ```markdown
 # 🎥 YOLO Video Detection with Player-Specific Heatmap
 
@@ -187,4 +137,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-That’s it! Now your GitHub repository has a professional `README.md` file that explains everything about your project. Let me know if you need further help! 🚀
+### How to Use This:
+1. Copy the entire block of text above.
+2. Open your GitHub repository.
+3. Create a new file named `README.md`.
+4. Paste the copied text into the `README.md` file.
+5. Save and commit the file.
