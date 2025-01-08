@@ -75,13 +75,8 @@ pip install PyQt5 pydicom numpy matplotlib
 - The application assumes that the DICOM files are sorted by slice location. If the files do not have a `SliceLocation` attribute, they are sorted by their order in the directory.
 
 ## License
-This code is provided under the **MIT License**. Feel free to modify and distribute it as needed.
+This code is provided under the **MIT License**.
 
-## Author
-[Your Name]
-
-## Contact
-For any questions, feedback, or issues, please contact [Your Email Address].
 
 ---
 
