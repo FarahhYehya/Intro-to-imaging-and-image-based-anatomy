@@ -91,16 +91,6 @@ pip install opencv-python numpy matplotlib Pillow
 
 ## License
 
-MIT License. Feel free to use and modify.
+MIT License. 
 
----
 
-### How to Use This README
-
-1. Copy the Markdown content above.
-2. Create a file named `README.md` in your project's root directory.
-3. Paste the content into the file.
-4. Commit and push the file to your GitHub repository.
-5. GitHub will automatically render it into a beautifully formatted document.
-
-Let me know if you need further assistance! 🚀
