@@ -19,22 +19,6 @@ Welcome to the **Skeleton Puzzle Game** repository! This project is a 3D puzzle 
 3. **Assemble the Skeleton**: Drag and rotate the pieces to their correct positions. Pieces will snap into place when aligned correctly.
 4. **Beat the Timer**: Complete the puzzle before the timer runs out for the best score!
 
-## Repository Structure
-
-```
-Skeleton-Puzzle-Game/
-├── Assets/
-│   ├── Models/              # Contains the skeleton model and its pieces
-│   ├── Scripts/             # All C# scripts for game mechanics
-│   │   ├── Snapping.cs      # Handles snapping of pieces into place
-│   │   ├── Rotation.cs      # Manages rotation around 3 axes
-│   │   ├── Randomizer.cs    # Randomizes piece positions and rotations
-│   │   ├── Timer.cs         # Implements the game timer
-│   ├── Scenes/              # Unity scene files
-│   ├── Materials/           # Textures and materials for the skeleton
-├── Blender/                 # Contains the Blender project file for the skeleton model
-├── README.md                # This file
-└── LICENSE                  # License information for the project
 ```
 
 ## Requirements
