@@ -19,8 +19,6 @@ Welcome to the **Skeleton Puzzle Game** repository! This project is a 3D puzzle 
 3. **Assemble the Skeleton**: Drag and rotate the pieces to their correct positions. Pieces will snap into place when aligned correctly.
 4. **Beat the Timer**: Complete the puzzle before the timer runs out for the best score!
 
-```
-
 ## Requirements
 
 - **Unity**: Version 2020.3 or later (LTS recommended).
