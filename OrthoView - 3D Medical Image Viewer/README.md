@@ -1,7 +1,3 @@
-Ah, I see! You want to add a **video demonstration** (or a GIF/screen recording) of the program in action to the README file, without changing any functionality. This is a great idea to visually showcase how the application works. Below is the updated README with a section for the video screen (demonstration):
-
----
-
 # OrthoView - 3D Medical Image Viewer
 
 ## Overview
