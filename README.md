@@ -9,8 +9,7 @@ Welcome to the **Introduction to Imaging and Image-Based Anatomy** repository! T
 This repository is organized into several projects and tools, each focusing on different aspects of medical imaging and anatomy. Below is an overview of the main components:
 
 ### 1. **Dicom Viewer**
-A tool for viewing and analyzing DICOM files, which are the standard format for medical imaging data.  
-**Features**: Image manipulation, zoom, pan, and window-level adjustments.
+A Python-based tool for viewing, analyzing, and manipulating DICOM files, featuring image/video display, DICOM tag exploration, anonymization, and 3D slice visualization. Built with PyQt5 and pydicom, it provides a user-friendly interface for medical imaging tasks.
 
 ### 2. **Organ Classifier using AI**
 An AI-based tool that classifies organs in medical images using machine learning techniques.  
