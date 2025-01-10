@@ -14,16 +14,16 @@ Here are some screenshots of the match and the generated heatmaps:
 
 #### Match Screenshots
 1. **Player Detection**  
-   ![Player Detection](screenshots/player_detection.png)  
+   ![Player Detection](https://github.com/user-attachments/assets/a8a1d189-2891-4604-9c69-b75678b66823)  
    *Players detected and tracked using the YOLO model.*
 
 2. **Player Tracking**  
-   ![Player Tracking](screenshots/player_tracking.png)  
+   ![Player Tracking]((https://github.com/user-attachments/assets/1ceb07d2-c9cb-4247-a959-e1c5c9cd1765))  
    *Players are assigned unique IDs and tracked across frames.*
 
 #### Heatmap Screenshots
-1. **Player-Specific Heatmap**  
-   ![Player Heatmap](screenshots/player_heatmap.png)  
+   **Player-Specific Heatmap**  
+   ![Player Heatmap](https://github.com/user-attachments/assets/fcc59fd7-c6b5-4d7f-918f-267f063902b0)  
    *Heatmap showing the movement of a specific player on the football pitch.*
 
 🛠️ Requirements
