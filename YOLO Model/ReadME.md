@@ -26,6 +26,7 @@ Here are some screenshots of the match and the generated heatmaps:
    ![Player Heatmap](https://github.com/user-attachments/assets/fcc59fd7-c6b5-4d7f-918f-267f063902b0)  
    *Heatmap showing the movement of a specific player on the football pitch.*
 
+
 🛠️ Requirements
 To run this project, you need the following Python packages:
 - tkinter (usually comes pre-installed with Python)
