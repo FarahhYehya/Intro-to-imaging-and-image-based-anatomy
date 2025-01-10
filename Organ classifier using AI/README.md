@@ -143,8 +143,6 @@ To help you get a better understanding of how the organ classification model wor
 
 [![Organ Classification Demo](https://github.com/user-attachments/assets/e3eda386-1bf6-4aa4-953e-e9bf51ddf882)
 
-*(Click on the image above to watch the video on YouTube)*
-
 ### Video Outline
 1. **Introduction**: Brief overview of the project and its goals.
 2. **Loading the Model**: Demonstrates how to load the pre-trained model using TensorFlow.
