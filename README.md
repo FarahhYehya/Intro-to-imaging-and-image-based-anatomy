@@ -17,8 +17,7 @@ An AI-based tool that classifies organs in medical images using machine learning
 This project demonstrates the application of AI in automating the identification of anatomical structures.
 
 ### 3. **OrthoView - 3D Medical Image Viewer**
-A 3D medical image viewer that allows for the visualization of complex anatomical structures.  
-**Supports**: Various imaging modalities, including CT and MRI, and provides tools for 3D reconstruction and analysis.
+A Python-based 3D medical image viewer designed for visualizing DICOM files in sagittal, coronal, and transverse planes. It offers tools for slice navigation, brightness/contrast adjustment, crosshair synchronization, and zoom/pan functionality, making it ideal for medical professionals and researchers.
 
 ### 4. **Quantum Precession Scanner**
 A science fiction concept exploring the integration of quantum sensors with fMRI technology to break the Heisenberg Uncertainty Principle.  
