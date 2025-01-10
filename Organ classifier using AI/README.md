@@ -10,8 +10,10 @@ This repository contains a deep learning model for classifying medical images in
 5. [Evaluation](#evaluation)
 6. [Usage](#usage)
 7. [Results](#results)
-8. [Dependencies](#dependencies)
-9. [License](#license)
+8. [Video Demonstration](#video-demonstration)
+9. [Dependencies](#dependencies)
+10. [License](#license)
+11. [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -41,6 +43,7 @@ Each folder contains images of the respective organ.
 ## Model Architecture
 
 The model architecture is as follows:
+
 - **Input Layer**: 150x150 RGB images
 - **Convolutional Layers**:
   - Conv2D (32 filters, 3x3 kernel, ReLU activation)
@@ -59,13 +62,13 @@ The model is compiled using the Adam optimizer and categorical cross-entropy los
 
 ## Training
 
-The model was trained for 10 epochs with early stopping to prevent overfitting. The training process achieved a validation accuracy of **95%**.
+The model was trained for 10 epochs with early stopping to prevent overfitting. The training process achieved a validation accuracy of 95%.
 
-### Training Parameters:
-- **Batch Size**: 32
-- **Image Size**: 150x150
-- **Epochs**: 10
-- **Early Stopping**: Patience of 3 epochs
+**Training Parameters**:
+- Batch Size: 32
+- Image Size: 150x150
+- Epochs: 10
+- Early Stopping: Patience of 3 epochs
 
 ---
 
@@ -123,12 +126,31 @@ print(f"Predicted Organ: {predicted_class}")
 
 ## Results
 
-The model achieved a high validation accuracy of **95%**, demonstrating its effectiveness in classifying medical images into the correct organ categories.
+The model achieved a high validation accuracy of 95%, demonstrating its effectiveness in classifying medical images into the correct organ categories.
 
-### Example Predictions:
-- **Input Image**: `90-rotated1-rotated2-rotated3.jpg`
-- **Predicted Class**: Limb
-- **Probabilities**: [0.01, 0.02, 0.95, 0.02]
+**Example Predictions**:
+- Input Image: `90-rotated1-rotated2-rotated3.jpg`
+- Predicted Class: Limb
+- Probabilities: [0.01, 0.02, 0.95, 0.02]
+
+---
+
+## Video Demonstration
+
+To help you get a better understanding of how the organ classification model works, we have included a video demonstration. This video walks you through the process of loading the model, making predictions on new images, and interpreting the results.
+
+### Watch the Demonstration
+
+[![Organ Classification Demo](https://github.com/user-attachments/assets/e3eda386-1bf6-4aa4-953e-e9bf51ddf882)
+
+*(Click on the image above to watch the video on YouTube)*
+
+### Video Outline
+1. **Introduction**: Brief overview of the project and its goals.
+2. **Loading the Model**: Demonstrates how to load the pre-trained model using TensorFlow.
+3. **Making Predictions**: Shows how to use the `predict_organ` function to classify a new image.
+4. **Interpreting Results**: Explains how to interpret the prediction probabilities and the final classification.
+5. **Example Predictions**: Includes a few example images and their corresponding predictions.
 
 ---
 
@@ -155,9 +177,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ## Acknowledgments
-
-- The dataset used in this project was sourced from [Kaggle](https://www.kaggle.com).
+- The dataset used in this project was sourced from [Kaggle](https://www.kaggle.com/).
 - Special thanks to the TensorFlow and Keras teams for providing the tools to build this model.
 
 ---
-
