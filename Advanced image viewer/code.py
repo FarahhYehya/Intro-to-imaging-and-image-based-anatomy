@@ -6,6 +6,27 @@ from PIL import Image, ImageTk
 import matplotlib.pyplot as plt
 
 
+class ScrollableFrame(ttk.Frame):
+    def __init__(self, container, *args, **kwargs):
+        super().__init__(container, *args, **kwargs)
+        self.canvas = tk.Canvas(self)
+        scrollbar = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
+        self.scrollable_frame = ttk.Frame(self.canvas)
+
+        self.scrollable_frame.bind(
+            "<Configure>",
+            lambda e: self.canvas.configure(
+                scrollregion=self.canvas.bbox("all")
+            )
+        )
+
+        self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
+        self.canvas.configure(yscrollcommand=scrollbar.set)
+
+        self.canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+
 class ImageViewer:
     def __init__(self):
         self.root = tk.Tk()
@@ -34,124 +55,121 @@ class ImageViewer:
         self.output2_canvas = self.create_viewport("Output 2", row=0, column=2)
 
         # Control Panel
-        control_frame = ttk.LabelFrame(self.root, text="Controls", padding="10")
-        control_frame.grid(row=1, column=0, columnspan=3, sticky="ew", padx=10, pady=10)
+        control_frame = ScrollableFrame(self.root)
+        control_frame.grid(row=1, column=0, columnspan=3, sticky="nsew", padx=10, pady=10)
 
         # File Operations
-        ttk.Button(control_frame, text="Open Image", command=self.open_image).grid(row=0, column=0, padx=5, pady=5)
-        ttk.Button(control_frame, text="Save Output", command=self.save_image).grid(row=0, column=1, padx=5, pady=5)
+        ttk.Button(control_frame.scrollable_frame, text="Open Image", command=self.open_image).grid(row=0, column=0, padx=5, pady=5)
+        ttk.Button(control_frame.scrollable_frame, text="Save Output", command=self.save_image).grid(row=0, column=1, padx=5, pady=5)
 
         # Source Selection Box
-        ttk.Label(control_frame, text="Source:").grid(row=0, column=2, padx=5, pady=5)
+        ttk.Label(control_frame.scrollable_frame, text="Source:").grid(row=0, column=2, padx=5, pady=5)
         self.source_var = tk.StringVar(value="Input")
-        ttk.Combobox(control_frame, textvariable=self.source_var,
+        ttk.Combobox(control_frame.scrollable_frame, textvariable=self.source_var,
                      values=["Input", "Output 1", "Output 2"]).grid(row=0, column=3, padx=5, pady=5)
 
+        # Apply to Output Selection Box (Moved beside Source)
+        ttk.Label(control_frame.scrollable_frame, text="Apply to:").grid(row=0, column=4, padx=5, pady=5)
+        self.apply_to_var = tk.StringVar(value="Output 1")
+        ttk.Combobox(control_frame.scrollable_frame, textvariable=self.apply_to_var, values=["Output 1", "Output 2"]).grid(row=0, column=5, padx=5, pady=5)
+
         # Zoom and Interpolation
-        ttk.Label(control_frame, text="Zoom Type:").grid(row=1, column=0, padx=5, pady=5)
+        ttk.Label(control_frame.scrollable_frame, text="Zoom Type:").grid(row=1, column=0, padx=5, pady=5)
         self.zoom_type_var = tk.StringVar(value="Linear")
-        ttk.Combobox(control_frame, textvariable=self.zoom_type_var,
+        ttk.Combobox(control_frame.scrollable_frame, textvariable=self.zoom_type_var,
                      values=["Nearest", "Linear", "Bilinear", "Bicubic", "Area"]).grid(row=1, column=1, padx=5, pady=5)
 
         # Output Resolution Slider
-        ttk.Label(control_frame, text="Zoom scale: ").grid(row=1, column=2, padx=5, pady=5)
-        self.resolution_slider = ttk.Scale(control_frame, from_=100, to=1000, orient="horizontal", length=150,
+        ttk.Label(control_frame.scrollable_frame, text="Zoom scale: ").grid(row=1, column=2, padx=5, pady=5)
+        self.resolution_slider = ttk.Scale(control_frame.scrollable_frame, from_=100, to=1000, orient="horizontal", length=150,
                                            command=lambda _: self.apply_resolution())
         self.resolution_slider.set(400)  # Default resolution (400x400)
         self.resolution_slider.grid(row=1, column=3, padx=5, pady=5)
 
         # No of Pixels Slider
-        ttk.Label(control_frame, text="No of Pixels:").grid(row=1, column=4, padx=5, pady=5)
-        self.pixels_slider = ttk.Scale(control_frame, from_=1, to=100, orient="horizontal", length=150,
+        ttk.Label(control_frame.scrollable_frame, text="No of Pixels:").grid(row=1, column=4, padx=5, pady=5)
+        self.pixels_slider = ttk.Scale(control_frame.scrollable_frame, from_=1, to=100, orient="horizontal", length=150,
                                        command=lambda _: self.apply_pixels())
         self.pixels_slider.set(50)  # Default value
         self.pixels_slider.grid(row=1, column=5, padx=5, pady=5)
 
         # Noise and Denoising
-        ttk.Label(control_frame, text="Noise:").grid(row=2, column=0, padx=5, pady=5)
+        ttk.Label(control_frame.scrollable_frame, text="Noise:").grid(row=2, column=0, padx=5, pady=5)
         self.noise_var = tk.StringVar(value="None")
-        ttk.Combobox(control_frame, textvariable=self.noise_var,
+        ttk.Combobox(control_frame.scrollable_frame, textvariable=self.noise_var,
                      values=["None", "Gaussian", "Salt-and-Pepper", "Speckle"]).grid(row=2, column=1, padx=5, pady=5)
-        ttk.Label(control_frame, text="Denoise:").grid(row=2, column=2, padx=5, pady=5)
+        ttk.Label(control_frame.scrollable_frame, text="Denoise:").grid(row=2, column=2, padx=5, pady=5)
         self.denoise_var = tk.StringVar(value="None")
-        ttk.Combobox(control_frame, textvariable=self.denoise_var,
+        ttk.Combobox(control_frame.scrollable_frame, textvariable=self.denoise_var,
                      values=["None", "Gaussian", "Median", "Bilateral"]).grid(row=2, column=3, padx=5, pady=5)
-        ttk.Button(control_frame, text="Apply Noise/Denoise", command=self.apply_noise_denoise).grid(row=2, column=4,
+        ttk.Button(control_frame.scrollable_frame, text="Apply Noise/Denoise", command=self.apply_noise_denoise).grid(row=2, column=4,
                                                                                                      padx=5, pady=5)
 
         # Filters
-        ttk.Label(control_frame, text="Filter:").grid(row=3, column=0, padx=5, pady=5)
+        ttk.Label(control_frame.scrollable_frame, text="Filter:").grid(row=3, column=0, padx=5, pady=5)
         self.filter_var = tk.StringVar(value="None")
-        ttk.Combobox(control_frame, textvariable=self.filter_var,
+        ttk.Combobox(control_frame.scrollable_frame, textvariable=self.filter_var,
                      values=["None", "Lowpass", "Highpass", "Sharpen", "Edge Detection"]).grid(row=3, column=1, padx=5,
                                                                                                pady=5)
-        ttk.Button(control_frame, text="Apply Filter", command=self.apply_filter).grid(row=3, column=2, padx=5, pady=5)
+        ttk.Button(control_frame.scrollable_frame, text="Apply Filter", command=self.apply_filter).grid(row=3, column=2, padx=5, pady=5)
 
         # Contrast Enhancement
-        ttk.Label(control_frame, text="Contrast:").grid(row=4, column=0, padx=5, pady=5)
+        ttk.Label(control_frame.scrollable_frame, text="Contrast:").grid(row=4, column=0, padx=5, pady=5)
         self.contrast_var = tk.StringVar(value="None")
-        ttk.Combobox(control_frame, textvariable=self.contrast_var,
+        ttk.Combobox(control_frame.scrollable_frame, textvariable=self.contrast_var,
                      values=["None", "Histogram Equalization", "CLAHE", "Gamma Correction"]).grid(row=4, column=1,
                                                                                                   padx=5, pady=5)
-        ttk.Button(control_frame, text="Apply Contrast", command=self.apply_contrast).grid(row=4, column=2, padx=5,
+        ttk.Button(control_frame.scrollable_frame, text="Apply Contrast", command=self.apply_contrast).grid(row=4, column=2, padx=5,
                                                                                            pady=5)
 
         # ROI and SNR
-        ttk.Button(control_frame, text="Select ROI 1 (Signal 1)", command=lambda: self.select_roi("roi1")).grid(row=5,
+        ttk.Button(control_frame.scrollable_frame, text="Select ROI 1 (Signal 1)", command=lambda: self.select_roi("roi1")).grid(row=5,
                                                                                                                 column=0,
                                                                                                                 padx=5,
                                                                                                                 pady=5)
-        ttk.Button(control_frame, text="Select ROI 2 (Signal 2)", command=lambda: self.select_roi("roi2")).grid(row=5,
+        ttk.Button(control_frame.scrollable_frame, text="Select ROI 2 (Signal 2)", command=lambda: self.select_roi("roi2")).grid(row=5,
                                                                                                                 column=1,
                                                                                                                 padx=5,
                                                                                                                 pady=5)
-        ttk.Button(control_frame, text="Select Noise ROI", command=lambda: self.select_roi("noise_roi")).grid(row=5,
+        ttk.Button(control_frame.scrollable_frame, text="Select Noise ROI", command=lambda: self.select_roi("noise_roi")).grid(row=5,
                                                                                                               column=2,
                                                                                                               padx=5,
                                                                                                               pady=5)
-        ttk.Button(control_frame, text="Calculate SNR", command=self.calculate_snr).grid(row=5, column=3, padx=5,
+        ttk.Button(control_frame.scrollable_frame, text="Calculate SNR", command=self.calculate_snr).grid(row=5, column=3, padx=5,
                                                                                          pady=5)
-        ttk.Button(control_frame, text="Calculate CNR", command=self.calculate_cnr).grid(row=5, column=4, padx=5,
+        ttk.Button(control_frame.scrollable_frame, text="Calculate CNR", command=self.calculate_cnr).grid(row=5, column=4, padx=5,
                                                                                          pady=5)
-        self.snr_label = ttk.Label(control_frame, text="SNR: N/A")
+        self.snr_label = ttk.Label(control_frame.scrollable_frame, text="SNR: N/A")
         self.snr_label.grid(row=6, column=0, columnspan=2, padx=5, pady=5)
-        self.cnr_label = ttk.Label(control_frame, text="CNR: N/A")
+        self.cnr_label = ttk.Label(control_frame.scrollable_frame, text="CNR: N/A")
         self.cnr_label.grid(row=6, column=2, columnspan=2, padx=5, pady=5)
 
         # Brightness and Contrast Adjustment
-        ttk.Label(control_frame, text="Brightness:").grid(row=7, column=0, padx=5, pady=5)
-        self.brightness_slider = ttk.Scale(control_frame, from_=-100, to=100, orient="horizontal", length=150)
+        ttk.Label(control_frame.scrollable_frame, text="Brightness:").grid(row=7, column=0, padx=5, pady=5)
+        self.brightness_slider = ttk.Scale(control_frame.scrollable_frame, from_=-100, to=100, orient="horizontal", length=150)
         self.brightness_slider.set(0)
         self.brightness_slider.grid(row=7, column=1, padx=5, pady=5)
-        ttk.Label(control_frame, text="Contrast:").grid(row=7, column=2, padx=5, pady=5)
-        self.contrast_slider = ttk.Scale(control_frame, from_=-100, to=100, orient="horizontal", length=150)
+        ttk.Label(control_frame.scrollable_frame, text="Contrast:").grid(row=7, column=2, padx=5, pady=5)
+        self.contrast_slider = ttk.Scale(control_frame.scrollable_frame, from_=-100, to=100, orient="horizontal", length=150)
         self.contrast_slider.set(0)
         self.contrast_slider.grid(row=7, column=3, padx=5, pady=5)
-        ttk.Button(control_frame, text="Apply Brightness/Contrast", command=self.apply_brightness_contrast).grid(row=7,
+        ttk.Button(control_frame.scrollable_frame, text="Apply Brightness/Contrast", command=self.apply_brightness_contrast).grid(row=7,
                                                                                                                  column=4,
                                                                                                                  padx=5,
                                                                                                                  pady=5)
 
         # FOV
-        ttk.Button(control_frame, text="Set FOV Center", command=self.set_fov_center).grid(row=8, column=0, padx=5,
+        ttk.Button(control_frame.scrollable_frame, text="Set FOV Center", command=self.set_fov_center).grid(row=8, column=0, padx=5,
                                                                                            pady=5)
-        ttk.Label(control_frame, text="FOV Size:").grid(row=8, column=1, padx=5, pady=5)
-        self.fov_slider = ttk.Scale(control_frame, from_=10, to=100, orient="horizontal", length=150)
+        ttk.Label(control_frame.scrollable_frame, text="FOV Size:").grid(row=8, column=1, padx=5, pady=5)
+        self.fov_slider = ttk.Scale(control_frame.scrollable_frame, from_=10, to=100, orient="horizontal", length=150)
         self.fov_slider.set(100)
         self.fov_slider.grid(row=8, column=2, padx=5, pady=5)
-        ttk.Button(control_frame, text="Apply FOV", command=self.apply_fov).grid(row=8, column=3, padx=5, pady=5)
-
-        # Apply to Output
-        ttk.Label(control_frame, text="Apply to:").grid(row=9, column=0, padx=5, pady=5)
-        self.apply_to_var = tk.StringVar(value="Output 1")
-        ttk.Combobox(control_frame, textvariable=self.apply_to_var, values=["Output 1", "Output 2"]).grid(row=9,
-                                                                                                          column=1,
-                                                                                                          padx=5,
-                                                                                                          pady=5)
+        ttk.Button(control_frame.scrollable_frame, text="Apply FOV", command=self.apply_fov).grid(row=8, column=3, padx=5, pady=5)
 
         # Undo and Reset
-        ttk.Button(control_frame, text="Undo", command=self.undo).grid(row=10, column=0, padx=5, pady=5)
-        ttk.Button(control_frame, text="Reset", command=self.reset).grid(row=10, column=1, padx=5, pady=5)
+        ttk.Button(control_frame.scrollable_frame, text="Undo", command=self.undo).grid(row=10, column=0, padx=5, pady=5)
+        ttk.Button(control_frame.scrollable_frame, text="Reset", command=self.reset).grid(row=10, column=1, padx=5, pady=5)
 
         # Bind mouse events for ROI selection
         self.input_canvas.bind("<ButtonPress-1>", self.start_draw_roi)
@@ -622,4 +640,4 @@ class ImageViewer:
 
 if __name__ == "__main__":
     app = ImageViewer()
-    app.run() 
+    app.run()
