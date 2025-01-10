@@ -18,7 +18,7 @@ Here are some screenshots of the match and the generated heatmaps:
    *Players detected and tracked using the YOLO model.*
 
 2. **Player Tracking**  
-   ![Player Tracking]((https://github.com/user-attachments/assets/1ceb07d2-c9cb-4247-a959-e1c5c9cd1765))  
+   ![Player Tracking](https://github.com/user-attachments/assets/1ceb07d2-c9cb-4247-a959-e1c5c9cd1765)  
    *Players are assigned unique IDs and tracked across frames.*
 
 #### Heatmap Screenshots
