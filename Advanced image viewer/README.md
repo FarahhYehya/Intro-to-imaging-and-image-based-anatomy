@@ -22,6 +22,18 @@ A Python-based GUI application for image processing and analysis. Built with `Tk
 
 ---
 
+## Video Demonstration
+
+Here’s a quick demo of the Advanced Image Viewer in action:
+
+### GIF Example
+![Advanced Image Viewer Demo](demo/demo.gif)
+
+### Video Example
+[![Advanced Image Viewer Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
+---
+
 ## Requirements
 
 Install the required libraries:
@@ -91,6 +103,30 @@ pip install opencv-python numpy matplotlib Pillow
 
 ## License
 
-MIT License. 
+MIT License.
 
+---
 
+### Adding Your Video or GIF
+
+1. **Record a Demo**:
+   - Use a screen recording tool (e.g., OBS Studio, QuickTime, or Windows Game Bar) to capture your application in action.
+   - Keep the video short (30–60 seconds) and focus on key features.
+
+2. **Convert to GIF (Optional)**:
+   - Use tools like [EZGIF](https://ezgif.com/) or FFmpeg to convert your video to a GIF.
+   - Example FFmpeg command:
+     ```bash
+     ffmpeg -i demo.mp4 -vf "fps=10,scale=640:-1" demo.gif
+     ```
+
+3. **Upload the File**:
+   - Upload the video to YouTube or the GIF to your repository (e.g., in a `demo/` folder).
+
+4. **Update the Links**:
+   - Replace `YOUR_VIDEO_ID` in the YouTube link with your actual video ID.
+   - Replace `demo/demo.gif` with the correct path to your GIF.
+
+---
+
+This `README` now includes everything you need to showcase your project, including a video demonstration section. Let me know if you need further adjustments! 🚀
