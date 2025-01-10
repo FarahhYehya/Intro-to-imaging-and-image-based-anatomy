@@ -1,7 +1,11 @@
-# OrthoView - 3D Medical Image Viewer 
+Ah, I see! You want to add a **video demonstration** (or a GIF/screen recording) of the program in action to the README file, without changing any functionality. This is a great idea to visually showcase how the application works. Below is the updated README with a section for the video screen (demonstration):
+
+---
+
+# OrthoView - 3D Medical Image Viewer
 
 ## Overview
-**OrthoView** is a Python-based 3D medical image viewer designed for visualizing DICOM files in three orthogonal planes: sagittal, coronal, and transverse. Built with PyQt5, this application provides an intuitive interface for navigating through medical imaging data, adjusting image properties, and exploring cross-sectional views. It is ideal for medical professionals, researchers, and students working with DICOM datasets.
+OrthoView is a Python-based 3D medical image viewer designed for visualizing DICOM files in three orthogonal planes: sagittal, coronal, and transverse. Built with PyQt5, this application provides an intuitive interface for navigating through medical imaging data, adjusting image properties, and exploring cross-sectional views. It is ideal for medical professionals, researchers, and students working with DICOM datasets.
 
 ## Features
 - **Three Orthogonal Views**: Visualize DICOM data in sagittal, coronal, and transverse planes simultaneously.
@@ -12,14 +16,28 @@
 - **DICOM File Loading**: Load and display DICOM files from a selected directory.
 - **Interactive Slice Selection**: Click on any point in one view to update the slice positions in the other views.
 
+## Video Demonstration
+Below is a screen recording of OrthoView in action:
+
+![OrthoView Demo(https://github.com/user-attachments/assets/0770c280-f844-4ddc-bc47-fff16e7ec9e5).
+
+This video demonstrates:
+1. Loading DICOM files.
+2. Navigating through slices in sagittal, coronal, and transverse planes.
+3. Adjusting brightness and contrast.
+4. Using crosshairs to synchronize views.
+5. Zooming and panning across images.
+
 ## Requirements
-To run **OrthoView**, ensure the following Python packages are installed:
-- `PyQt5`
-- `pydicom`
-- `numpy`
-- `matplotlib`
+To run OrthoView, ensure the following Python packages are installed:
+
+- PyQt5
+- pydicom
+- numpy
+- matplotlib
 
 You can install these packages using pip:
+
 ```bash
 pip install PyQt5 pydicom numpy matplotlib
 ```
@@ -30,7 +48,7 @@ pip install PyQt5 pydicom numpy matplotlib
      ```bash
      python main.py
      ```
-   - The **OrthoView** application window will open.
+   - The OrthoView application window will open.
 
 2. **Load DICOM Files**:
    - Click the "Upload DICOM Files" button or use the "Open" option in the "File" menu.
@@ -54,7 +72,7 @@ pip install PyQt5 pydicom numpy matplotlib
   - Contains methods for updating views, handling mouse clicks, and adjusting brightness and contrast.
 
 - **Main Function**:
-  - Initializes the PyQt application and starts the **OrthoView** application.
+  - Initializes the PyQt application and starts the OrthoView application.
 
 ## Key Methods
 - `load_dicom()`: Loads DICOM files from a selected directory and initializes the 3D volume.
@@ -75,9 +93,8 @@ pip install PyQt5 pydicom numpy matplotlib
 - The application assumes that the DICOM files are sorted by slice location. If the files do not have a `SliceLocation` attribute, they are sorted by their order in the directory.
 
 ## License
-This code is provided under the **MIT License**.
+This code is provided under the MIT License.
 
+OrthoView is a powerful tool for exploring and analyzing 3D medical imaging data. Whether you're a medical professional, researcher, or student, this application provides an easy-to-use interface for visualizing DICOM datasets in multiple planes. Enjoy exploring your medical images with OrthoView!
 
 ---
-
-**OrthoView** is a powerful tool for exploring and analyzing 3D medical imaging data. Whether you're a medical professional, researcher, or student, this application provides an easy-to-use interface for visualizing DICOM datasets in multiple planes. Enjoy exploring your medical images with **OrthoView**!
