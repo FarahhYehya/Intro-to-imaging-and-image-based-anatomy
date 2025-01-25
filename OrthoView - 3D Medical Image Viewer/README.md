@@ -53,14 +53,22 @@ pip install PyQt5 pydicom numpy matplotlib
 3. **Navigate Through Slices**:
    - Use the sliders below each view to navigate through the slices in the sagittal, coronal, and transverse planes.
 
+   - ![WhatsApp Image 2025-01-25 at 17 22 00_3bec0cb4](https://github.com/user-attachments/assets/4fef2714-1ba0-478a-9ddd-903dc22444ed)
+
 4. **Adjust Brightness and Contrast**:
    - Use the brightness and contrast sliders at the bottom of the window to adjust the image appearance for better visualization.
+
+   - ![WhatsApp Image 2025-01-25 at 17 22 01_bb424331](https://github.com/user-attachments/assets/5c859213-5929-4c49-97a2-74dbc5f1091a)
+
 
 5. **Zoom and Pan**:
    - Use the navigation toolbar above each view to zoom in/out and pan across the image.
 
 6. **Crosshair Navigation**:
    - Click on any point in one view to update the slice positions in the other two views. Crosshairs will indicate the corresponding positions.
+
+     ![WhatsApp Image 2025-01-25 at 17 22 01_bf280740](https://github.com/user-attachments/assets/2007e5ac-bbd8-460a-81f3-e3f93742bf6e)
+
 
 ## Code Structure
 - **OrthoView Class**:
