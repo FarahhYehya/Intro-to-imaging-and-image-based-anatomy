@@ -56,13 +56,22 @@ pip install opencv-python numpy matplotlib Pillow
    - Use the **Controls** panel to add noise, apply filters, or enhance contrast.
    - Adjust brightness and contrast with sliders.
 
+![WhatsApp Image 2025-01-25 at 17 25 55_26587b79](https://github.com/user-attachments/assets/6c124a45-75b1-45e2-9402-0f0e1998b550)
+
+![WhatsApp Image 2025-01-25 at 17 25 56_2d2e1cf2](https://github.com/user-attachments/assets/a269a860-e41d-48ce-a010-3e2f1a06cd9d)
+
+
 4. **Select ROIs**:
    - Click **Select ROI 1**, **Select ROI 2**, or **Select Noise ROI** to draw rectangles on the image.
    - Click **Calculate SNR** or **Calculate CNR** to compute ratios.
 
+     ![WhatsApp Image 2025-01-25 at 17 25 56_6082b4c1](https://github.com/user-attachments/assets/37753b5e-d2e9-4eca-b844-a3a7326949fd)
+
 5. **Adjust Zoom and FOV**:
    - Use the **Zoom Type** dropdown and **Zoom Scale** slider.
    - Set a custom FOV center and size.
+
+   ![WhatsApp Image 2025-01-25 at 17 25 56_0937c398](https://github.com/user-attachments/assets/ae7c3310-1a2a-42d9-8d1c-36ef5e4dc956)
 
 6. **View Histogram**:
    - Double-click any image to view its histogram.
