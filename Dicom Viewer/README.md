@@ -69,15 +69,6 @@ A Python-based DICOM viewer application built using PyQt5 and pydicom. This appl
 
 ---
 
-## Video Demonstration
-
-To see the DICOM Viewer in action, check out the video demonstration below:
-
-[![DICOM Viewer Demonstration]([https://github.com/user-attachments/assets/2c3d36d5-9a58-4b06-83e1-9e074f8a346a])
-
-
----
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request or open an issue if you find any bugs or have suggestions for improvements.
