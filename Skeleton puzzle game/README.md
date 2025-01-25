@@ -12,6 +12,9 @@ Welcome to the **Skeleton Puzzle Game** repository! This project is a 3D puzzle 
 - **Blender-Made Skeleton Model**: The skeleton was modeled and cut into pieces using Blender, ensuring a clean and precise design.
 - **Unity Implementation**: The game was developed in Unity, utilizing C# scripts for all game mechanics.
 
+![image](https://github.com/user-attachments/assets/3cebf30e-4b01-41f8-84ca-2f46f8fb40fa)
+
+![image](https://github.com/user-attachments/assets/43e7072b-2954-4771-914e-4f98b71b748f)
 ## How to Play
 
 1. **Start the Game**: Launch the game in Unity or build and run the executable.
