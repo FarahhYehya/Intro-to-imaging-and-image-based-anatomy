@@ -77,6 +77,7 @@ The model was trained for 10 epochs with early stopping to prevent overfitting. 
 The model was evaluated on the validation dataset, achieving the following metrics:
 - **Validation Accuracy**: 95%
 - **Validation Loss**: 0.0855
+  
 
 ---
 
@@ -127,12 +128,14 @@ print(f"Predicted Organ: {predicted_class}")
 ## Results
 
 The model achieved a high validation accuracy of 95%, demonstrating its effectiveness in classifying medical images into the correct organ categories.
+![image](https://github.com/user-attachments/assets/4e3fcb98-2539-4e75-abcb-b132be81adaa)
+![image](https://github.com/user-attachments/assets/9512d46b-451e-4ff7-aa5e-0913d3d289e6)
 
 **Example Predictions**:
 - Input Image: `90-rotated1-rotated2-rotated3.jpg`
 - Predicted Class: Limb
 - Probabilities: [0.01, 0.02, 0.95, 0.02]
-
+![image](https://github.com/user-attachments/assets/e63ec0a7-ff7f-44b7-acc6-f9531f29839b)
 ---
 
 ## Video Demonstration
