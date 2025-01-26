@@ -28,7 +28,7 @@ Here’s a quick demo of the Advanced Image Viewer in action:
 
 
 ### Video Example
-[![Advanced Image Viewer Demo](https://github.com/user-attachments/assets/5ea78773-0308-4f11-a601-2d9a0fb08883)
+https://github.com/user-attachments/assets/5ea78773-0308-4f11-a601-2d9a0fb08883
 
 ---
 
